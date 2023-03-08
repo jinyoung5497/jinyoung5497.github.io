@@ -1,0 +1,334 @@
+<!--
+    1. nav side bar (push in push out)
+    2. nav top bar
+    3. 4 div
+        1) good time
+            1. header (ex: good morning)
+            2. Grid : auto auto auto
+        2) Made for name
+            1. <div>header (Made for Jinyoung Choi, show all (link))
+            2. <div>Display Flex
+        3) Your top mixes
+            same as #2
+        4) Recently played
+            same as #2
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="spotify.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <title>Spotify Clone Coding</title>
+</head>
+
+<body>
+    <div id="main">
+        <!-- NAV SIDE BAR -->
+        <div id="mySidenav" class="sidenav">
+            <div>
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <div class="side-btn">
+                    <i class="fa fa-home" id="home"></i>
+                    <a href="#" id="home"></i>Home</a>
+                </div>
+                <div class="side-btn">
+                    <i class="fa fa-search"></i>
+                    <a href="#">Search</a>
+                </div>
+                <div class="side-btn">
+                    <i class="fa fa-book"></i>
+                    <a href="#">Your Library</a>
+                </div>
+            </div>
+            <div class="section">
+                <a href="#">Create Playlist</a>
+                <a href="#">Liked Songs</a>
+            </div>
+            <div class="dividerThin"></div>
+            <div class="section">
+                <a href="#">Your Top Songs 2022</a>
+                <a href="#">Discover Weekly</a>
+                <a href="#">Daily mix1</a>
+            </div>
+        </div>
+
+        <!-- NAV TOP BAR -->
+        <div id="nav-top">
+            <!-- nav button -->
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()" class="navBtn">&#9776;</span>
+            <!-- dropdown button -->
+            <div class="dropdown">
+                <button onclick="dropdown()" class="dropbtn">Jinyoung Choi<i class="arrow" id="down"
+                        onclick="dropdown()"></i></button>
+
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="#account">Account</a>
+                    <a href="#profile">Profile</a>
+                    <a href="#private">Private session</a>
+                    <a href="#settings">Settings</a>
+                    <div class="divider"></div>
+                    <a href="#logout">Log out</a>
+                </div>
+            </div>
+        </div>
+        <!-- 4 LARGE SECTIONS -->
+        <div id="sections">
+            <div class="section">
+                <div class="heading sec1">
+                    <h1>Good morning</h1>
+                </div>
+                <div class="section-items">
+                    <div class="item" onmouseover="changeColor1()" onmouseout="noChangeColor()">
+                        <img src="liked_songs.png" alt="icon">
+                        <span class="item-title">Liked Songs</span>
+                        <span class="circle" id="circle1">
+                            <span class="triangle"></span>
+                        </span>
+                    </div>
+                    <div class="item" onmouseover="changeColor2()" onmouseout="noChangeColor()">
+                        <img src="On repeat.png" alt="icon">
+                        <span class="item-title">On Repeat</span>
+                        <span class="circle" id="circle2">
+                            <span class="triangle"></span>
+                        </span>                        
+                    </div>
+                    <div class="item" onmouseover="changeColor3()" onmouseout="noChangeColor()">
+                        <img src="Gamingtracks.png" alt="icon">
+                        <span class="item-title">Top Gaming Tracks</span>
+                        <span class="circle" id="circle3">
+                            <span class="triangle"></span>
+                        </span>                        
+                    </div>
+                    <div class="item" onmouseover="changeColor4()" onmouseout="noChangeColor()">
+                        <img src="topSongs2022.png" alt="icon">
+                        <span class="item-title">Your Top Songs 2022</span>
+                        <span class="circle" id="circle4">
+                            <span class="triangle"></span>
+                        </span>                        
+                    </div>
+                    <div class="item" onmouseover="changeColor5()" onmouseout="noChangeColor()">
+                        <img src="ivemix.png" alt="icon">
+                        <span class="item-title">Discover Weekly</span>
+                        <span class="circle" id="circle5">
+                            <span class="triangle"></span>
+                        </span>                        
+                    </div>
+                    <div class="item" onmouseover="changeColor6()" onmouseout="noChangeColor()">
+                        <img src="daily1.png" alt="icon">
+                        <span class="item-title">Daily Mix1</span>
+                        <span class="circle" id="circle6">
+                            <span class="triangle"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="heading sec2">
+                    <h2>Made for Jinyoung Choi</h2>
+                    <span>SHOW ALL</span>
+                </div>
+                <div class="section-items2">
+                    <div class="item2" onclick="document.location='spotify.html'" onmouseover="fadeIn(7)" onmouseout="fadeOut(7)">
+                        <img src="daily1.png" alt="icon">
+                        <h3>Daily mix 1</h3>
+                        <p>BTOB, IU, WINNER and more</p>
+                        <span class="circle" id="circle7">
+                            <span class="triangle"></span>
+                        </span>
+                    </div>
+                    <div class="item2" onclick="document.location='spotify.html'" onmouseover="fadeIn(8)" onmouseout="fadeOut(8)">
+                        <img src="daily2.png" alt="icon">
+                        <h3>Daily mix 2</h3>
+                        <p>10cm, Lim Jae Beum, Lee Seung Gi and more</p>
+                        <span class="circle" id="circle8">
+                            <span class="triangle"></span>
+                        </span>
+                    </div>
+                    <div class="item2" onclick="document.location='spotify.html'" onmouseover="fadeIn(9)" onmouseout="fadeOut(9)">
+                        <img src="daily3.png" alt="icon">
+                        <h3>Daily mix 3</h3>
+                        <p>Sam Smith, Charlie Puth, Shawn Mendes...</p>
+                        <span class="circle" id="circle9">
+                            <span class="triangle"></span>
+                        </span>
+                    </div>
+                    <div class="item2" onclick="document.location='spotify.html'" onmouseover="fadeIn(10)" onmouseout="fadeOut(10)">
+                        <img src="daily4.png" alt="icon">
+                        <h3>Daily mix 4</h3>
+                        <p>DPR Live, Zion.T, Crush and more</p>
+                        <span class="circle" id="circle10">
+                            <span class="triangle"></span>
+                        </span>
+                    </div>
+                    <div class="item2" onclick="document.location='spotify.html'" onmouseover="fadeIn(11)" onmouseout="fadeOut(11)">
+                        <img src="daily5.png" alt="icon">
+                        <h3>Daily mix 5</h3>
+                        <p>BTS, SEVENTEEN, Highlight and more</p>
+                        <span class="circle" id="circle11">
+                            <span class="triangle"></span>
+                        </span>
+                    </div>
+                    <div class="item2" onclick="document.location='spotify.html'" onmouseover="fadeIn(12)" onmouseout="fadeOut(12)">
+                        <img src="daily6.png" alt="icon">
+                        <h3>Daily mix 6</h3>
+                        <p>Red Velvet, BLACKPINK, IZ*ONE...</p>
+                        <span class="circle" id="circle12">
+                            <span class="triangle"></span>
+                        </span>
+                    </div>
+                    <div class="item2" onclick="document.location='spotify.html'" onmouseover="fadeIn(13)" onmouseout="fadeOut(13)">
+                        <img src="daily drive.png" alt="icon">
+                        <h3>Daily Drive</h3>
+                        <p>A mix of news and music made for you</p>
+                        <span class="circle" id="circle13">
+                            <span class="triangle"></span>
+                        </span>
+                    </div>
+                    <div class="item2" onclick="document.location='spotify.html'" onmouseover="fadeIn(14)" onmouseout="fadeOut(14)">
+                        <img src="daily wellness.png" alt="icon">
+                        <h3>Daily Wellness</h3>
+                        <p>A mix of music and wellness to guide you...</p>
+                        <span class="circle" id="circle14">
+                            <span class="triangle"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="heading sec2">
+                    <h2>Your top Mixes</h2>
+                    <span>SHOW ALL</span>
+                </div>
+                <div class="section-items2">
+                    <div class="item2">
+                        <img src="icon_img.png" alt="icon">
+                        <h3>Moody Mix</h3>
+                        <p>G-DRAGON, DAVICHI, Gummy and more</p>
+                    </div>
+                    <div class="item2">
+                        <img src="icon_img.png" alt="icon">
+                        <h3>Chill Mix</h3>
+                        <p>SVEA, Peder Elias, Sandeul and more</p>
+                    </div>
+                    <div class="item2">
+                        <img src="icon_img.png" alt="icon">
+                        <h3>Stellar Mix</h3>
+                        <p>Crash Adams, 24kGoldn, Bazanji...</p>
+                    </div>
+                    <div class="item2">
+                        <img src="icon_img.png" alt="icon">
+                        <h3>IVE Mix</h3>
+                        <p>NewJeans, JO YURI, fromis_9 and more</p>
+                    </div>
+                    <div class="item2">
+                        <img src="icon_img.png" alt="icon">
+                        <h3>2010s Mix</h3>
+                        <p>Fall out boy, Paul Kim, Jung Seung Hwan...</p>
+                    </div>
+                    <div class="item2">
+                        <img src="icon_img.png" alt="icon">
+                        <h3>2000s Mix</h3>
+                        <p>Brown Eyes, Fly to the sky, Zia and more</p>
+                    </div>
+                    <div class="item2">
+                        <img src="icon_img.png" alt="icon">
+                        <h3>Pop Mix</h3>
+                        <p>Justin Bieber, Peder Elias, Lil Nas X...</p>
+                    </div>
+                    <div class="item2">
+                        <img src="icon_img.png" alt="icon">
+                        <h3>Rock Mix</h3>
+                        <p>Creedence Clearwater Revival, Linkin Park...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="heading sec2">
+                    <h2>Recently played</h2>
+                    <span>SHOW ALL</span>
+                </div>
+                <div class="section-items2">
+                    <div class="item2">
+                        <img src="icon_img.png" alt="icon">
+                        <h3>Moody Mix</h3>
+                        <p>G-DRAGON, DAVICHI, Gummy and more</p>
+                    </div>
+                    <div class="item2">
+                        <img src="icon_img.png" alt="icon">
+                        <h3>Chill Mix</h3>
+                        <p>SVEA, Peder Elias, Sandeul and more</p>
+                    </div>
+                    <div class="item2">
+                        <img src="icon_img.png" alt="icon">
+                        <h3>Stellar Mix</h3>
+                        <p>Crash Adams, 24kGoldn, Bazanji...</p>
+                    </div>
+                    <div class="item2">
+                        <img src="icon_img.png" alt="icon">
+                        <h3>IVE Mix</h3>
+                        <p>NewJeans, JO YURI, fromis_9 and more</p>
+                    </div>
+                    <div class="item2">
+                        <img src="icon_img.png" alt="icon">
+                        <h3>2010s Mix</h3>
+                        <p>Fall out boy, Paul Kim, Jung Seung Hwan...</p>
+                    </div>
+                    <div class="item2">
+                        <img src="icon_img.png" alt="icon">
+                        <h3>2000s Mix</h3>
+                        <p>Brown Eyes, Fly to the sky, Zia and more</p>
+                    </div>
+                    <div class="item2">
+                        <img src="icon_img.png" alt="icon">
+                        <h3>Pop Mix</h3>
+                        <p>Justin Bieber, Peder Elias, Lil Nas X...</p>
+                    </div>
+                    <div class="item2">
+                        <img src="icon_img.png" alt="icon">
+                        <h3>Rock Mix</h3>
+                        <p>Creedence Clearwater Revival, Linkin Park...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="heading sec1">
+                    <h2>Made for Jinyoung Choi</h2>
+                </div>
+                <div class="section-items">
+                    <div class="item">
+                        <img src="icon_img.png" alt="icon">
+                        <span>sdfsdf</span>
+                    </div>
+                    <div class="item">
+                        <img src="icon_img.png" alt="icon">
+                        after
+                    </div>
+                    <div class="item">
+                        <img src="icon_img.png" alt="icon">
+                        like
+                    </div>
+                    <div class="item">
+                        <img src="icon_img.png" alt="icon">
+                        izone
+                    </div>
+                    <div class="item">
+                        <img src="icon_img.png" alt="icon">
+                        jang
+                    </div>
+                    <div class="item">
+                        <img src="icon_img.png" alt="icon">
+                        wonyoung
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="spotify.js"></script>
+</body>
+
+</html>
